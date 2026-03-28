@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="48" viewBox="0 0 160 48">
+  <rect width="160" height="48" rx="8" fill="#000"/>
+  <g>
+    <path fill="#00d4ff" d="M14 8l14 16-14 16V8z"/>
+    <path fill="#00f076" d="M14 8l14 16 8-8-8-8H14z"/>
+    <path fill="#ff3a44" d="M14 40l14-16 8 8-8 8H14z"/>
+    <path fill="#ffbd00" d="M36 16l-8 8 8 8 6-8-6-8z"/>
+  </g>
+  <g fill="#fff">
+    <text x="48" y="18" font-family="Arial, sans-serif" font-size="9" font-weight="400">Google Playで</text>
+    <text x="48" y="34" font-family="Arial, sans-serif" font-size="14" font-weight="600">手に入れよう</text>
+  </g>
+</svg>
