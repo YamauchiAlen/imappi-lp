@@ -39,6 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
       if (href === '#') return;
+      if (href === '#top') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
       e.preventDefault();
       const target = document.querySelector(href);
       if (target) {
@@ -68,7 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Contact form: open the user's mail app with the composed inquiry
+  // Contact form: open the user's mail app with the composed inquiry,
+  // then show a completion panel in place of the form (the page itself never navigates)
   const CONTACT_EMAIL = 'info@hikaso.com';
   const form = document.getElementById('contact-form');
   if (form) {
@@ -85,13 +91,24 @@ document.addEventListener('DOMContentLoaded', function() {
         'お問い合わせ内容：',
         data.get('message')
       ].join('\n');
-      window.location.href = 'mailto:' + CONTACT_EMAIL +
+      const mailto = 'mailto:' + CONTACT_EMAIL +
         '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(body);
-      const status = document.getElementById('form-status');
-      if (status) {
-        status.textContent = 'メールアプリが開きます。開かない場合は ' + CONTACT_EMAIL + ' まで直接ご連絡ください。';
-      }
+      const link = document.createElement('a');
+      link.href = mailto;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      form.innerHTML =
+        '<div class="form-done">' +
+        '<img src="images/imappi-illust_smile_001.png" alt="">' +
+        '<p class="form-done__title">送信ありがとうございました！</p>' +
+        '<p>メールアプリが開きますので、内容をご確認のうえ送信を完了してください。<br>' +
+        'メールアプリが開かない場合は、お手数ですが<br>' +
+        '<a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a> まで直接ご連絡ください。</p>' +
+        '</div>';
+      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   }
 

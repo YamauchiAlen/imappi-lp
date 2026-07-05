@@ -1181,6 +1181,30 @@ details[open] .faq-question::after {
   line-height: 1.7;
 }
 .form-status:empty { display: none; }
+.form-done {
+  text-align: center;
+  padding: 36px 12px;
+}
+.form-done img {
+  width: 104px;
+  margin: 0 auto 16px;
+}
+.form-done__title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--coral-text);
+  margin-bottom: 12px;
+}
+.form-done p {
+  font-size: 13px;
+  color: var(--body-text);
+  line-height: 2;
+}
+.form-done a {
+  color: var(--coral-text);
+  font-weight: 700;
+  text-decoration: underline;
+}
 
 /* ===== FINAL CTA ===== */
 .final-cta {
