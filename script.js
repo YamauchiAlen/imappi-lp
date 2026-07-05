@@ -146,6 +146,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Security detail modal
+  const modal = document.getElementById('security-modal');
+  if (modal) {
+    const mTitle = document.getElementById('modal-title');
+    const mBody = document.getElementById('modal-body');
+    const close = () => { modal.hidden = true; document.body.style.overflow = ''; };
+    document.querySelectorAll('.security-card[data-modal-title]').forEach(card => {
+      card.addEventListener('click', () => {
+        mTitle.textContent = card.dataset.modalTitle;
+        mBody.textContent = card.dataset.modalBody;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    modal.querySelectorAll('[data-modal-close]').forEach(el => el.addEventListener('click', close));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) close(); });
+  }
+
   // Scroll reveal animation
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!prefersReduced && 'IntersectionObserver' in window) {
