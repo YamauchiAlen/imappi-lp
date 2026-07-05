@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Function tabs
+  // Function tabs (text panel + phone mock switch together)
   const tabs = document.querySelectorAll('.function-tab');
   const panels = document.querySelectorAll('.function-panel');
+  const phones = document.querySelectorAll('.function-phone img');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const target = tab.dataset.tab;
       tabs.forEach(t => t.classList.remove('active'));
       panels.forEach(p => p.classList.remove('active'));
+      phones.forEach(ph => ph.classList.toggle('active', ph.dataset.panel === target));
       tab.classList.add('active');
       document.getElementById('panel-' + target).classList.add('active');
     });
@@ -47,30 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Contact form: open the user's mail app with the composed inquiry
-  const CONTACT_EMAIL = 'info@hikaso.com';
-  const form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      const subject = '【イマッピ】お問い合わせ：' + data.get('type');
-      const body = [
-        'お名前：' + data.get('name'),
-        '会社名：' + (data.get('company') || '（記入なし）'),
-        'メールアドレス：' + data.get('email'),
-        'お問い合わせ種別：' + data.get('type'),
-        '',
-        'お問い合わせ内容：',
-        data.get('message')
-      ].join('\n');
-      window.location.href = 'mailto:' + CONTACT_EMAIL +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-      const status = document.getElementById('form-status');
-      if (status) {
-        status.textContent = 'メールアプリが開きます。開かない場合は ' + CONTACT_EMAIL + ' まで直接ご連絡ください。';
-      }
+  // Mascot voice button (audio asset is not available yet)
+  const voiceBtn = document.querySelector('.btn-voice');
+  if (voiceBtn) {
+    const original = voiceBtn.textContent;
+    voiceBtn.addEventListener('click', () => {
+      voiceBtn.textContent = 'じゅんびちゅうだっぴ…！';
+      setTimeout(() => { voiceBtn.textContent = original; }, 1800);
     });
   }
 
@@ -80,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const revealTargets = document.querySelectorAll(
       '.pain-card, .feature-card, .emotion-card, .security-card, .voice-card, ' +
       '.pricing-card, .faq-item, .about-catch, .about-desc, .story-text, .story-image, ' +
-      '.mascot-image, .mascot-info, .app-intro__screens, .chat-row, .phone-frame'
+      '.mascot-left, .mascot-bubble, .app-intro__screens, .chat-row, .conversation-phone'
     );
     revealTargets.forEach(el => el.classList.add('reveal'));
     const observer = new IntersectionObserver(entries => {
