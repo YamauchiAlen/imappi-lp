@@ -49,6 +49,52 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Mascot expression switcher: clicking a face swaps the big mascot image
+  const mascotMain = document.querySelector('.mascot-image img');
+  const expressions = document.querySelectorAll('.mascot-expressions img');
+  if (mascotMain && expressions.length) {
+    const defaultSrc = mascotMain.getAttribute('src');
+    expressions.forEach(img => {
+      img.addEventListener('click', () => {
+        const alreadyActive = img.classList.contains('active');
+        expressions.forEach(i => i.classList.remove('active'));
+        if (alreadyActive) {
+          mascotMain.src = defaultSrc;
+        } else {
+          img.classList.add('active');
+          mascotMain.src = img.getAttribute('src');
+        }
+      });
+    });
+  }
+
+  // Contact form: open the user's mail app with the composed inquiry
+  const CONTACT_EMAIL = 'info@hikaso.com';
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const subject = '【イマッピ】お問い合わせ：' + data.get('type');
+      const body = [
+        'お名前：' + data.get('name'),
+        '会社名：' + (data.get('company') || '（記入なし）'),
+        'メールアドレス：' + data.get('email'),
+        'お問い合わせ種別：' + data.get('type'),
+        '',
+        'お問い合わせ内容：',
+        data.get('message')
+      ].join('\n');
+      window.location.href = 'mailto:' + CONTACT_EMAIL +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+      const status = document.getElementById('form-status');
+      if (status) {
+        status.textContent = 'メールアプリが開きます。開かない場合は ' + CONTACT_EMAIL + ' まで直接ご連絡ください。';
+      }
+    });
+  }
+
   // Mascot voice button
   const voiceBtn = document.querySelector('.btn-voice');
   if (voiceBtn) {

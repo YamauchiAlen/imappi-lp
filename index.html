@@ -518,6 +518,47 @@
     </div>
   </section>
 
+  <!-- ===== CONTACT ===== -->
+  <section class="contact-section flower-bg" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 class="section-title contact-title">お問い合わせ</h2>
+          <p class="contact-desc">通常、5営業日以内にご返信いたします。<br>返信がない場合はお手数ですが、<br>再度送信いただけますようお願いいたします。</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="contact-name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="contact-name" name="name" placeholder="例：山田太郎" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-company">会社名 <span class="optional">任意</span></label>
+            <input type="text" id="contact-company" name="company" placeholder="個人の方は記入不要">
+          </div>
+          <div class="form-group">
+            <label for="contact-email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="contact-email" name="email" placeholder="例：sample@gmail.com" required>
+          </div>
+          <div class="form-group">
+            <label>お問い合わせ種別 <span class="required">必須</span></label>
+            <div class="radio-group">
+              <label><input type="radio" name="type" value="プラン・ご契約について" checked> プラン・ご契約について</label>
+              <label><input type="radio" name="type" value="機能要望・不具合の報告"> 機能要望・不具合の報告</label>
+              <label><input type="radio" name="type" value="その他"> その他</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">お問い合わせ内容 <span class="required">必須</span></label>
+            <textarea id="contact-message" name="message" rows="5" maxlength="500" placeholder="お問い合わせ内容をご記入ください（500文字まで）" required></textarea>
+          </div>
+          <p class="form-note">送信すると、<a href="privacy.html">プライバシーポリシー</a>に同意したことになります。</p>
+          <button type="submit" class="btn-submit">送信する</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== FINAL CTA ===== -->
   <section class="final-cta flower-bg">
     <div class="container">
@@ -561,7 +602,7 @@
         <a href="company.html">運営会社</a>
         <a href="terms.html">利用規約</a>
         <a href="privacy.html">プライバシーポリシー</a>
-        <a href="mailto:info@hikaso.com">お問い合わせ</a>
+        <a href="#contact">お問い合わせ</a>
       </div>
       <p class="footer__copyright">Copyright &copy; imappi 2026</p>
     </div>

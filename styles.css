@@ -358,6 +358,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   object-fit: cover;
   background: rgba(255, 255, 255, .92);
   padding: 6px;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+.mascot-expressions img:hover {
+  transform: translateY(-4px);
+}
+.mascot-expressions img.active {
+  box-shadow: 0 0 0 3px #fff, 0 6px 16px rgba(120, 30, 15, .25);
 }
 .btn-voice {
   margin-top: 20px;
@@ -1048,6 +1056,129 @@ details[open] .faq-question::after {
   margin-bottom: 24px;
 }
 
+/* ===== CONTACT ===== */
+.contact-section {
+  padding: 96px 0;
+  background: var(--pink-bg);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 48px;
+  align-items: start;
+}
+.contact-title {
+  text-align: left;
+}
+.contact-desc {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--coral-text);
+  line-height: 2;
+  margin-top: 12px;
+}
+.contact-form {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 44px 40px;
+  box-shadow: var(--shadow);
+}
+.form-group {
+  margin-bottom: 22px;
+}
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.required,
+.optional {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-left: 6px;
+  background: var(--coral);
+  color: #fff;
+}
+.optional {
+  background: #B4B9C1;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid #E8E2DF;
+  border-radius: 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--navy);
+  transition: border-color .2s;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #B9BFC8;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--coral);
+}
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.radio-group input[type="radio"] {
+  accent-color: var(--coral);
+  width: 16px;
+  height: 16px;
+}
+.form-note {
+  font-size: 12px;
+  color: var(--gray-text);
+  margin-bottom: 22px;
+}
+.form-note a {
+  color: var(--coral-text);
+  text-decoration: underline;
+}
+.btn-submit {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  background: var(--coral);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px;
+  border-radius: 999px;
+  transition: opacity .2s, transform .2s;
+}
+.btn-submit:hover { opacity: .9; transform: translateY(-2px); }
+.form-status {
+  font-size: 13px;
+  color: var(--coral-text);
+  font-weight: 700;
+  text-align: center;
+  margin-top: 16px;
+  line-height: 1.7;
+}
+.form-status:empty { display: none; }
+
 /* ===== FINAL CTA ===== */
 .final-cta {
   padding: 100px 0 0;
@@ -1207,6 +1338,8 @@ details[open] .faq-question::after {
   .security-character { margin: 24px auto 0; width: 220px; }
   .story-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .contact-title { text-align: center; }
+  .contact-desc { text-align: center; }
 }
 
 @media (max-width: 768px) {
