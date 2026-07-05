@@ -1337,8 +1337,15 @@ details[open] .faq-question::after {
   .about-grid { grid-template-columns: 1fr; }
   .app-intro__inner { grid-template-columns: 1fr; text-align: center; }
   .mascot-grid { grid-template-columns: 1fr; }
-  .mascot-bubble { border-radius: 40px; padding: 48px 36px; }
+  .mascot-bubble { border-radius: 32px; padding: 40px 26px; }
   .mascot-bubble::before { display: none; }
+  .mascot-specs {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    max-width: 260px;
+  }
+  .mascot-specs p { white-space: normal; }
+  .mascot-desc br { display: none; }
   .conversation-grid { grid-template-columns: 1fr; }
   .conversation-text { text-align: center; }
   .conversation-text .section-title { text-align: center; }
@@ -1348,7 +1355,8 @@ details[open] .faq-question::after {
   .function-phone { position: static; width: 218px; margin: 32px auto 0; }
   .security-grid { grid-template-columns: 1fr; }
   .security-cards { grid-template-columns: repeat(2, 1fr); padding-bottom: 0; }
-  .security-character { margin: 24px auto 0; width: 220px; }
+  .security-character { margin: 24px auto 0; width: 210px; }
+  .security-character img { width: 100%; margin-bottom: -60px; }
   .story-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-title { text-align: center; }
@@ -1402,8 +1410,18 @@ details[open] .faq-question::after {
   .pain-cards { grid-template-columns: 1fr; }
   .emotion-cards { grid-template-columns: 1fr; }
   .security-cards { grid-template-columns: 1fr; }
-  .app-intro__screens { flex-wrap: wrap; }
-  .app-screen { width: 46%; }
-  .app-screen--mid { width: 54%; margin-top: 0; }
+  .app-intro__screens { gap: 12px; }
+  .app-screen { width: 31%; border-radius: 14px; }
+  .app-screen--mid { width: 34%; margin-top: -12px; }
   .conversation-phone { width: 200px; }
+  .hero__catch { font-size: 32px; }
+  .mascot-title { font-size: 26px; }
+  /* iOS Safari zooms into inputs smaller than 16px — keep form inputs at 16px on phones */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    font-size: 16px;
+  }
+  .functions-content { padding: 32px 20px; }
+  .faq-question { font-size: 14px; }
 }
