@@ -49,13 +49,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Mascot voice button (audio asset is not available yet)
+  // Mascot voice button
   const voiceBtn = document.querySelector('.btn-voice');
   if (voiceBtn) {
-    const original = voiceBtn.textContent;
+    const original = voiceBtn.innerHTML;
+    const voice = new Audio(voiceBtn.dataset.voice || 'audio/imappi-voice.wav');
+    voice.preload = 'none';
+    voice.addEventListener('ended', () => { voiceBtn.innerHTML = original; voiceBtn.disabled = false; });
+    voice.addEventListener('error', () => { voiceBtn.innerHTML = original; voiceBtn.disabled = false; });
     voiceBtn.addEventListener('click', () => {
-      voiceBtn.textContent = 'じゅんびちゅうだっぴ…！';
-      setTimeout(() => { voiceBtn.textContent = original; }, 1800);
+      voice.currentTime = 0;
+      voice.play();
+      voiceBtn.innerHTML = '&#127911; おはなし中だっぴ…';
+      voiceBtn.disabled = true;
     });
   }
 
