@@ -73,42 +73,59 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Contact form: open the user's mail app with the composed inquiry,
-  // then show a completion panel in place of the form (the page itself never navigates)
+  // Contact form: submit directly via FormSubmit (delivered to CONTACT_EMAIL),
+  // falling back to the user's mail app if the request fails
   const CONTACT_EMAIL = 'info@hikaso.com';
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
+      const btn = form.querySelector('.btn-submit');
+      const status = document.getElementById('form-status');
       const data = new FormData(form);
-      const subject = '【イマッピ】お問い合わせ：' + data.get('type');
-      const body = [
-        'お名前：' + data.get('name'),
-        '会社名：' + (data.get('company') || '（記入なし）'),
-        'メールアドレス：' + data.get('email'),
-        'お問い合わせ種別：' + data.get('type'),
-        '',
-        'お問い合わせ内容：',
-        data.get('message')
-      ].join('\n');
-      const mailto = 'mailto:' + CONTACT_EMAIL +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-      const link = document.createElement('a');
-      link.href = mailto;
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      form.innerHTML =
-        '<div class="form-done">' +
-        '<img src="images/imappi-illust_smile_001.png" alt="">' +
-        '<p class="form-done__title">送信ありがとうございました！</p>' +
-        '<p>メールアプリが開きますので、内容をご確認のうえ送信を完了してください。<br>' +
-        'メールアプリが開かない場合は、お手数ですが<br>' +
-        '<a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a> まで直接ご連絡ください。</p>' +
-        '</div>';
-      form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      btn.disabled = true;
+      btn.textContent = '送信中…';
+      status.textContent = '';
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/' + CONTACT_EMAIL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: '【イマッピ】お問い合わせ：' + data.get('type'),
+            _template: 'table',
+            'お名前': data.get('name'),
+            '会社名': data.get('company') || '（記入なし）',
+            'メールアドレス': data.get('email'),
+            'お問い合わせ種別': data.get('type'),
+            'お問い合わせ内容': data.get('message')
+          })
+        });
+        if (!res.ok) throw new Error('send failed: ' + res.status);
+        form.reset();
+        status.textContent = 'お問い合わせを送信しました！';
+      } catch (err) {
+        // fallback: compose the inquiry in the visitor's mail app
+        const body = [
+          'お名前：' + data.get('name'),
+          '会社名：' + (data.get('company') || '（記入なし）'),
+          'メールアドレス：' + data.get('email'),
+          'お問い合わせ種別：' + data.get('type'),
+          '',
+          'お問い合わせ内容：',
+          data.get('message')
+        ].join('\n');
+        const link = document.createElement('a');
+        link.href = 'mailto:' + CONTACT_EMAIL +
+          '?subject=' + encodeURIComponent('【イマッピ】お問い合わせ：' + data.get('type')) +
+          '&body=' + encodeURIComponent(body);
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        status.textContent = '送信できなかったため、メールアプリを開きました。開かない場合は ' + CONTACT_EMAIL + ' まで直接ご連絡ください。';
+      }
+      btn.disabled = false;
+      btn.textContent = '送信する';
     });
   }
 
