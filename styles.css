@@ -1065,7 +1065,7 @@ details[open] .faq-question::after {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
   gap: 48px;
-  align-items: start;
+  align-items: center;
 }
 .contact-title {
   text-align: left;
@@ -1078,20 +1078,20 @@ details[open] .faq-question::after {
   margin-top: 12px;
 }
 .contact-form {
-  background: #fff;
+  background: var(--pink-soft);
   border-radius: var(--radius);
-  padding: 44px 40px;
+  padding: 28px 36px 30px;
   box-shadow: var(--shadow);
 }
 .form-group {
-  margin-bottom: 22px;
+  margin-bottom: 13px;
 }
 .form-group label {
   display: block;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 .required,
 .optional {
@@ -1111,10 +1111,11 @@ details[open] .faq-question::after {
 .form-group input[type="email"],
 .form-group textarea {
   width: 100%;
-  padding: 13px 16px;
-  border: 1px solid #E8E2DF;
-  border-radius: 12px;
-  font-size: 14px;
+  padding: 9px 14px;
+  border: 1px solid #EDE4E1;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
   font-family: inherit;
   color: var(--navy);
   transition: border-color .2s;
@@ -1131,13 +1132,14 @@ details[open] .faq-question::after {
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3px;
 }
 .radio-group label {
   display: flex;
   align-items: center;
   gap: 8px;
   font-weight: 500;
+  font-size: 13px;
   margin-bottom: 0;
   cursor: pointer;
 }
@@ -1147,9 +1149,10 @@ details[open] .faq-question::after {
   height: 16px;
 }
 .form-note {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--gray-text);
-  margin-bottom: 22px;
+  margin-bottom: 14px;
+  text-align: center;
 }
 .form-note a {
   color: var(--coral-text);
@@ -1158,13 +1161,13 @@ details[open] .faq-question::after {
 .btn-submit {
   display: block;
   width: 100%;
-  max-width: 320px;
+  max-width: 220px;
   margin: 0 auto;
   background: var(--coral);
   color: #fff;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
-  padding: 16px;
+  padding: 12px;
   border-radius: 999px;
   transition: opacity .2s, transform .2s;
 }
@@ -1182,7 +1185,7 @@ details[open] .faq-question::after {
 /* ===== FINAL CTA ===== */
 .final-cta {
   padding: 100px 0 0;
-  background: var(--pink-bg);
+  background: linear-gradient(180deg, #fff 0%, #fff 52%, #FBE0D9 100%);
   text-align: center;
   overflow: hidden;
 }
