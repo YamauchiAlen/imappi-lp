@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
           body: JSON.stringify({
             _subject: '【イマッピ】お問い合わせ：' + data.get('type'),
             _template: 'table',
+            _honey: data.get('_honey') || '',
             'お名前': data.get('name'),
             '会社名': data.get('company') || '（記入なし）',
             'メールアドレス': data.get('email'),
