@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>利用規約 - イマッピ</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -16,7 +18,7 @@
   <header class="header">
     <div class="header__inner">
       <a href="index.html" class="logo">イマッピ</a>
-      <nav class="nav">
+      <nav class="nav" id="global-nav">
         <a href="index.html#about">イマッピとは</a>
         <a href="index.html#features">特徴・機能</a>
         <a href="index.html#voices">ユーザーの声</a>
@@ -25,6 +27,9 @@
         <a href="index.html#contact">お問い合わせ</a>
       </nav>
       <a href="index.html#download" class="btn-download">ダウンロード</a>
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -161,5 +166,6 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "imappi-prd",
+    "prd": "imappi-prd",
+    "dev": "imappi-dev"
+  }
+}

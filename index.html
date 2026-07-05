@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>イマッピ - 親子のためのAI会話アプリ</title>
+  <meta name="description" content="良い親でいられない日があったっていい。イマッピは、親の代わりに子どもと対話するAI会話アプリ。恐怖で動かすのではなく、対話で「納得」をつくり、親子の間に穏やかな時間を取り戻します。">
+  <meta name="theme-color" content="#E8604C">
+  <link rel="canonical" href="https://imappi-prd.web.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="イマッピ">
+  <meta property="og:title" content="イマッピ - 親子のためのAI会話アプリ">
+  <meta property="og:description" content="良い親でいられない日があったっていい。イマッピは、親の代わりに子どもと対話するAI会話アプリです。">
+  <meta property="og:url" content="https://imappi-prd.web.app/">
+  <meta property="og:image" content="https://imappi-prd.web.app/images/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -15,7 +28,7 @@
   <header class="header" id="top">
     <div class="header__inner">
       <a href="#top" class="logo">イマッピ</a>
-      <nav class="nav">
+      <nav class="nav" id="global-nav">
         <a href="#about">イマッピとは</a>
         <a href="#features">特徴・機能</a>
         <a href="#voices">ユーザーの声</a>
@@ -24,6 +37,9 @@
         <a href="#contact">お問い合わせ</a>
       </nav>
       <a href="#download" class="btn-download">ダウンロード</a>
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -40,7 +56,7 @@
         </div>
       </div>
       <div class="hero__visual">
-        <img src="images/imapi_hero_photo.jpg" alt="親子でスマホを見る" class="hero__photo">
+        <img src="images/hero-photo.jpg" alt="親子でスマホを見る" class="hero__photo">
         <img src="images/imappi_hero_mock.png" alt="イマッピアプリ画面" class="hero__mockup">
       </div>
     </div>
@@ -54,7 +70,7 @@
       <div class="about-grid">
         <div class="about-left">
           <h3 class="about-catch">怒りたくないのに、<br>怒ってしまう日がある。</h3>
-          <p class="about-desc">ついにんなことが重なって、<br>自己嫌悪になってしまうことはありませんか？</p>
+          <p class="about-desc">つい、そんなことが重なって、<br>自己嫌悪になってしまうことはありませんか？</p>
         </div>
         <div class="about-right">
           <div class="pain-cards">
@@ -100,9 +116,7 @@
           </div>
         </div>
         <div class="app-intro__screens">
-          <img src="images/スクリーンショット 2026-02-17 16.12.54.png" alt="アプリ画面1" class="app-screen">
-          <img src="images/スクリーンショット 2026-02-17 16.13.45.png" alt="アプリ画面2" class="app-screen">
-          <img src="images/スクリーンショット 2026-02-17 16.14.13.png" alt="アプリ画面3" class="app-screen">
+          <img src="images/imappi_hero_mock.png" alt="イマッピのアプリ画面" class="app-intro__mock" loading="lazy">
         </div>
       </div>
     </div>
@@ -122,23 +136,22 @@
             <h3 class="mascot-name">イマッピ</h3>
             <div class="mascot-specs">
               <p><span class="spec-label">種族</span>イマヨリ（妖精）</p>
-              <p><span class="spec-label">性格</span>一生懸で不器用</p>
+              <p><span class="spec-label">性格</span>一生懸命で不器用</p>
               <p><span class="spec-label">得意</span>聞くこと、待つこと</p>
               <p><span class="spec-label">苦手</span>大きな音（特に雷）</p>
             </div>
             <p class="mascot-desc">子どもの「今」の気持ちに寄り添うと、<br>心がぽかぽかして幸せになるふしぎな妖精。<br>大きなお耳で子どものちょっとした話もよく聞き、<br>一緒に喜んだり悲しんだりします。</p>
           </div>
           <div class="mascot-expressions">
-            <img src="images/imappi-illust_default-001.png" alt="デフォルト">
-            <img src="images/imappi-illust_smile_001.png" alt="笑顔">
-            <img src="images/imappi-illust_laugh_001.png" alt="大笑い">
-            <img src="images/imappi-illust_sadness_001.png" alt="悲しみ">
-            <img src="images/imappi-illust_thinking_001.png" alt="考え中">
-            <img src="images/imappi-illust_fear_001.png" alt="怖い">
-            <img src="images/imappi-illust_anxiery_001.png" alt="不安">
-            <img src="images/imappi-illust_listening_001.png" alt="聞いてる">
+            <img src="images/imappi-illust_default-001.png" alt="デフォルト" loading="lazy">
+            <img src="images/imappi-illust_smile_001.png" alt="笑顔" loading="lazy">
+            <img src="images/imappi-illust_laugh_001.png" alt="大笑い" loading="lazy">
+            <img src="images/imappi-illust_sadness_001.png" alt="悲しみ" loading="lazy">
+            <img src="images/imappi-illust_thinking_001.png" alt="考え中" loading="lazy">
+            <img src="images/imappi-illust_fear_001.png" alt="怖い" loading="lazy">
+            <img src="images/imappi-illust_anxiery_001.png" alt="不安" loading="lazy">
+            <img src="images/imappi-illust_listening_001.png" alt="聞いてる" loading="lazy">
           </div>
-          <button class="btn-voice">&#128264; 声を聞いてみる</button>
         </div>
       </div>
     </div>
@@ -152,21 +165,21 @@
       <div class="feature-cards">
         <div class="feature-card">
           <div class="feature-card__img">
-            <img src="images/img_鬼から電話.jpg" alt="「怖い」ではなく「理解」で動く習慣を">
+            <img src="images/feature-oni-phone.jpg" alt="「怖い」ではなく「理解」で動く習慣を" loading="lazy">
           </div>
           <h3 class="feature-card__title">「怖い」ではなく<br>「理解」で動く習慣を</h3>
           <p class="feature-card__desc">イマッピは、おなじみの「鬼から電話」のような恐怖で動かすアプリではありません。<br>子どもの気持ちを尊重しながら対話の力で「なぜそうするのか」を理解する習慣を育みます。</p>
         </div>
         <div class="feature-card">
           <div class="feature-card__img">
-            <img src="images/shutterstock_2520120661.jpg" alt="親が聞きづらいことを、AIが代わりに聞く">
+            <img src="images/feature-listen.jpg" alt="親が聞きづらいことを、AIが代わりに聞く" loading="lazy">
           </div>
           <h3 class="feature-card__title">親が聞きづらいことを、<br>AIが代わりに聞く</h3>
           <p class="feature-card__desc">「何が嫌だったの？」という言葉も、親が聞くと子どもは身構えてしまいます。イマッピが代わりに聞くことで、子どもは素直な気持ちを話せるようになります。</p>
         </div>
         <div class="feature-card">
           <div class="feature-card__img">
-            <img src="images/shutterstock_2631420455.jpg" alt="子どもの「本音」を整理してフィードバック">
+            <img src="images/feature-report.jpg" alt="子どもの「本音」を整理してフィードバック" loading="lazy">
           </div>
           <h3 class="feature-card__title">子どもの「本音」を<br>整理してフィードバック</h3>
           <p class="feature-card__desc">お子さんがどう感じていたのかを分析し、親御さんにフィードバック。「言葉にできない気持ち」を見える化することで、親子のコミュニケーションを助けます。</p>
@@ -174,7 +187,7 @@
       </div>
 
       <div class="emotions-section">
-        <p class="emotions-lead">「このままだと怒鳴る」って思ったら、ほんでいい。</p>
+        <p class="emotions-lead">「このままだと怒鳴っちゃう」と思ったら、呼んでいい。</p>
         <div class="emotion-cards">
           <div class="emotion-card emotion-red">
             <h4>イヤイヤ</h4>
@@ -188,10 +201,10 @@
           <div class="emotion-card emotion-orange">
             <h4>モヤモヤ</h4>
             <ul>
-              <li>いつもと様子がおう</li>
+              <li>いつもと様子がちがう</li>
               <li>何か隠しているみたい</li>
               <li>体調不良気味にみえる</li>
-              <li>学校で何があった</li>
+              <li>学校で何かあったみたい</li>
             </ul>
           </div>
           <div class="emotion-card emotion-blue">
@@ -199,15 +212,15 @@
             <ul>
               <li>きょうだい喧嘩</li>
               <li>お友だちと喧嘩</li>
-              <li>学校で不機嫌になおった</li>
-              <li>急に教師が怒った</li>
+              <li>学校から不機嫌で帰ってきた</li>
+              <li>急にかんしゃくを起こした</li>
             </ul>
           </div>
           <div class="emotion-card emotion-yellow">
             <h4>ワクワク</h4>
             <ul>
               <li>クリスマスなどイベント前後</li>
-              <li>子どもが話したいけれど</li>
+              <li>子どもがたくさん話したい時</li>
               <li>もちろん日常場面にも！</li>
             </ul>
           </div>
@@ -223,10 +236,43 @@
         <div class="conversation-text">
           <h2 class="section-title-dark">イマッピとの会話イメージ</h2>
           <p class="conversation-desc">スマホの音声通話機能を使って<br>お話しできます</p>
-          <p class="conversation-note">※画像は会話のイメージです。メッセージ機能は搭載されていますが、音声だけで完了する設計です。</p>
+          <p class="conversation-note">※吹き出しは会話のイメージです。メッセージ機能も搭載していますが、音声だけで完結する設計です。</p>
         </div>
-        <div class="conversation-mockup">
-          <img src="images/スクリーンショット 2026-02-17 16.14.33.png" alt="会話画面">
+        <div class="chat" aria-label="イマッピと子どもの会話例">
+          <div class="chat-row chat-row--child">
+            <p class="chat-bubble chat-bubble--child">寝ない！</p>
+            <span class="chat-avatar chat-avatar--child" aria-hidden="true">&#129490;</span>
+          </div>
+          <div class="chat-row chat-row--imappi">
+            <img class="chat-avatar" src="images/imappi-illust_listening_001.png" alt="" loading="lazy">
+            <p class="chat-bubble chat-bubble--imappi">寝たくないんだっぴね。<br>…何がいちばんイヤっぴ？</p>
+          </div>
+          <div class="chat-row chat-row--child">
+            <p class="chat-bubble chat-bubble--child">まだ遊びたいの。<br>でもママがだめっていうの</p>
+            <span class="chat-avatar chat-avatar--child" aria-hidden="true">&#129490;</span>
+          </div>
+          <div class="chat-row chat-row--imappi">
+            <img class="chat-avatar" src="images/imappi-illust_thinking_001.png" alt="" loading="lazy">
+            <p class="chat-bubble chat-bubble--imappi">そっかっぴ。遊びたいんだっぴ。<br>じゃあ&ldquo;あと&#12295;分&rdquo;にするっぴ？<br>それとも&ldquo;ここまで&rdquo;にするっぴ？</p>
+          </div>
+          <div class="chat-row chat-row--child">
+            <p class="chat-bubble chat-bubble--child">え〜〜〜、あと5分！</p>
+            <span class="chat-avatar chat-avatar--child" aria-hidden="true">&#129490;</span>
+          </div>
+          <div class="chat-row chat-row--imappi">
+            <img class="chat-avatar" src="images/imappi-illust_smile_001.png" alt="" loading="lazy">
+            <p class="chat-bubble chat-bubble--imappi">あと5分だっぴね！<br>今度、ママ（パパ）にも<br>そう言ってみてっぴ！</p>
+          </div>
+        </div>
+        <div class="phone-frame" aria-hidden="true">
+          <div class="phone-screen">
+            <div class="phone-mic"><span>&#128483;</span></div>
+            <p class="phone-label">はなしかけてね！</p>
+            <img src="images/character-waving.png" alt="" class="phone-mascot" loading="lazy">
+            <div class="phone-bottom">
+              <span class="phone-btn">&#128075; イマッピとバイバイする</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -258,7 +304,7 @@
         <div class="functions-content">
           <div class="function-panel active" id="panel-1">
             <h3 class="function-title">イマッピコール</h3>
-            <p class="function-subtitle">親に「余裕がない時」に<br>イマッピが代わりにお助け</p>
+            <p class="function-subtitle">親に余裕がない時に<br>イマッピが代わりにお助け</p>
             <p class="function-desc">その場でイマッピを呼んで、会話を始めます。<br>親が「状況（お風呂に入らない等）」や「親の状態（疲れている等）」を事前に設定し、AIがそれを反映した会話を行います。</p>
           </div>
           <div class="function-panel" id="panel-2">
@@ -277,7 +323,7 @@
             <p class="function-desc">イマッピとの会話が終わると、お子さんがどんな気持ちだったか、何を話したかの要点レポートが親に届きます。感情の分析グラフつきで見える化します。</p>
           </div>
           <div class="function-phone">
-            <img src="images/スクリーンショット 2026-02-17 16.12.54.png" alt="アプリ機能画面">
+            <img src="images/imappi_hero_mock.png" alt="アプリ機能画面" loading="lazy">
           </div>
         </div>
       </div>
@@ -341,7 +387,7 @@
             <div class="voice-avatar"></div>
             <div>
               <p class="voice-name">Bさん</p>
-              <p class="voice-role">4歳男児 / 2歳女児の母</p>
+              <p class="voice-role">5歳男児の母</p>
             </div>
           </div>
           <h4 class="voice-card__title">子どもの気持ちが見えるように！</h4>
@@ -352,7 +398,7 @@
             <div class="voice-avatar"></div>
             <div>
               <p class="voice-name">Cさん</p>
-              <p class="voice-role">4歳男児 / 2歳女児の母</p>
+              <p class="voice-role">7歳女児 / 4歳男児の父</p>
             </div>
           </div>
           <h4 class="voice-card__title">罪悪感が減りました！</h4>
@@ -379,7 +425,7 @@
       <h2 class="section-title-dark">イマッピがうまれるまで</h2>
       <div class="story-grid">
         <div class="story-image">
-          <img src="images/shutterstock_2629673229.jpg" alt="家族でスマホを見る">
+          <img src="images/story-family.jpg" alt="家族でスマホを見る" loading="lazy">
         </div>
         <div class="story-text">
           <h3 class="story-catch">頑張るあなたと子どもの<br>『お守り』でありたい。</h3>
@@ -474,33 +520,34 @@
           <h2 class="section-title-dark contact-title">お問い合わせ</h2>
           <p class="contact-desc">通常、5営業日以内にご返信いたします。<br>返信がない場合はお手数ですが、<br>再度送信いただけますようお願いいたします。</p>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" id="contact-form">
           <div class="form-group">
-            <label>お名前 <span class="required">必須</span></label>
-            <input type="text" placeholder="例：山田太郎">
+            <label for="contact-name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="contact-name" name="name" placeholder="例：山田太郎" required>
           </div>
           <div class="form-group">
-            <label>会社名 <span class="required">任意</span></label>
-            <input type="text" placeholder="個人の方は記入不要">
+            <label for="contact-company">会社名 <span class="optional">任意</span></label>
+            <input type="text" id="contact-company" name="company" placeholder="個人の方は記入不要">
           </div>
           <div class="form-group">
-            <label>メールアドレス <span class="required">必須</span></label>
-            <input type="email" placeholder="例：sample@gmail.com">
+            <label for="contact-email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="contact-email" name="email" placeholder="例：sample@gmail.com" required>
           </div>
           <div class="form-group">
             <label>お問い合わせ種別 <span class="required">必須</span></label>
             <div class="radio-group">
-              <label><input type="radio" name="type" checked> プラン・ご契約について</label>
-              <label><input type="radio" name="type"> 機能要望・不具合の報告</label>
-              <label><input type="radio" name="type"> その他</label>
+              <label><input type="radio" name="type" value="プラン・ご契約について" checked> プラン・ご契約について</label>
+              <label><input type="radio" name="type" value="機能要望・不具合の報告"> 機能要望・不具合の報告</label>
+              <label><input type="radio" name="type" value="その他"> その他</label>
             </div>
           </div>
           <div class="form-group">
-            <label>お問い合わせ内容 <span class="required">必須</span></label>
-            <textarea rows="5" placeholder="お問い合わせ内容をご記入ください（500文字まで）"></textarea>
+            <label for="contact-message">お問い合わせ内容 <span class="required">必須</span></label>
+            <textarea id="contact-message" name="message" rows="5" maxlength="500" placeholder="お問い合わせ内容をご記入ください（500文字まで）" required></textarea>
           </div>
           <p class="form-note">送信すると、<a href="privacy.html">プライバシーポリシー</a>に同意したことになります。</p>
           <button type="submit" class="btn-submit">送信する</button>
+          <p class="form-status" id="form-status" role="status"></p>
         </form>
       </div>
     </div>
